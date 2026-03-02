@@ -3,169 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshay Saklani | Portfolio</title>
+    <title>Akshay Saklani | Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #0d1117;
-            --card-bg: #161b22;
+            --bg: #010409;
+            --card-bg: #0d1117;
             --border: #30363d;
-            --accent: #58a6ff;
-            --text: #c9d1d9;
-            --text-bright: #f0f6fc;
-            --tag-bg: rgba(56, 139, 253, 0.15);
+            --accent: #2f81f7;
+            --text-main: #adbac7;
+            --text-header: #f0f6fc;
+            --success: #3fb950;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 40px 20px;
+            color: var(--text-main);
             line-height: 1.6;
+            padding: 20px;
         }
 
-        .container { max-width: 900px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 40px auto; }
 
-        header { border-bottom: 1px solid var(--border); padding-bottom: 30px; margin-bottom: 40px; }
-        h1 { color: var(--text-bright); margin: 0; font-size: 2rem; }
-        .title-sub { color: var(--accent); font-weight: 500; }
-
-        .section-header { 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            margin-bottom: 25px; 
-            color: var(--text-bright);
+        /* --- INTRODUCTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
         }
 
-        /* Project Card Styling */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            background: url('https://github.com/akshaysaklani.png') center/cover;
+        }
+
+        .hero-text h1 { color: var(--text-header); font-size: 2.2rem; margin-bottom: 5px; }
+        .hero-text h2 { color: var(--accent); font-size: 1.2rem; font-weight: 500; margin-bottom: 15px; }
+        .hero-text p { max-width: 600px; font-size: 1rem; }
+
+        /* --- TECH STACK --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .skill-category {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .skill-category h3 { color: var(--text-header); font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; }
+        .skill-list { font-size: 0.85rem; color: var(--accent); display: flex; flex-wrap: wrap; gap: 8px; }
+
+        /* --- PROJECTS --- */
+        .section-title { color: var(--text-header); margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
+        
         .project-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 6px;
-            padding: 24px;
-            margin-bottom: 24px;
-            transition: transform 0.2s, border-color 0.2s;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
         }
 
-        .project-card:hover {
-            border-color: #8b949e;
-            transform: translateY(-2px);
-        }
+        .project-card:hover { border-color: #8b949e; }
 
-        .project-name {
+        .project-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            background: rgba(47, 129, 247, 0.1);
             color: var(--accent);
-            font-size: 1.25rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
         }
 
-        .project-desc {
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            color: #8b949e;
-            text-align: justify;
-        }
+        .project-card h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.4rem; }
+        .project-card p { margin-bottom: 20px; text-align: justify; font-size: 0.95rem; }
 
-        /* Tech Tags */
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-        .tag {
-            font-size: 12px;
-            font-weight: 500;
-            padding: 3px 10px;
-            border-radius: 12px;
-            background: var(--tag-bg);
-            color: var(--accent);
-            border: 1px solid rgba(56, 139, 253, 0.4);
-        }
-
-        /* Impact Highlights */
         .highlights {
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.15);
             padding: 15px;
-            border-radius: 6px;
-            border-left: 3px solid #238636;
+            border-radius: 4px;
+            border-left: 3px solid var(--success);
         }
-        .highlights ul { margin: 0; padding-left: 20px; font-size: 0.9rem; color: #7ee787; }
+        .highlights ul { list-style: none; }
+        .highlights li { font-size: 0.85rem; margin-bottom: 5px; color: #7ee787; }
+        .highlights li::before { content: "▹ "; color: var(--success); }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border); font-size: 0.8rem; }
 
         @media (max-width: 600px) {
-            body { padding: 20px 15px; }
+            .hero { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>Akshay Saklani</h1>
-        <div class="title-sub">Security Engineer & Cloud Architect</div>
-        <p>Halifax, NS | <a href="https://github.com/akshaysaklani" style="color:var(--accent)">github.com/akshaysaklani</a></p>
-    </header>
+    <section class="hero">
+        <div class="profile-pic"></div>
+        <div class="hero-text">
+            <h1>Akshay Saklani</h1>
+            <h2>Full Stack Developer</h2>
+            <p>
+                Specializing in building <strong>secure, cloud-native applications</strong>. I bridge the gap between robust backend infrastructure and intuitive frontend experiences, with a core focus on cybersecurity and system performance.
+            </p>
+            <div style="margin-top: 15px;">
+                <a href="https://github.com/akshaysaklani" style="color:var(--accent); text-decoration:none;"><i class="fab fa-github"></i> GitHub</a> &nbsp; | &nbsp;
+                <a href="mailto:your-email@example.com" style="color:var(--accent); text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="section-header">
-        <i class="fas fa-code-branch"></i>
-        <h2>Featured Projects</h2>
+    <div class="skills-grid">
+        <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skill-list"><span>React</span> <span>JavaScript</span> <span>HTML5/CSS3</span></div>
+        </div>
+        <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-list"><span>Node.js</span> <span>Python</span> <span>Android SDK</span></div>
+        </div>
+        <div class="skill-category">
+            <h3>Cloud & DevOps</h3>
+            <div class="skill-list"><span>GCP</span> <span>AWS</span> <span>Linux Hardening</span></div>
+        </div>
+        <div class="skill-category">
+            <h3>Security</h3>
+            <div class="skill-list"><span>Pen-Testing</span> <span>Nmap</span> <span>Metasploit</span></div>
+        </div>
     </div>
 
+    <h2 class="section-title"><i class="fas fa-layer-group"></i> Key Engineering Projects</h2>
+
     <div class="project-card">
-        <a href="#" class="project-name">Cybersecurity & Infrastructure Security Analysis</a>
-        <div class="tags">
-            <span class="tag">Nmap</span> <span class="tag">Metasploit</span> <span class="tag">Linux</span> <span class="tag">SSH Hardening</span>
-        </div>
+        <span class="project-tag">Cybersecurity</span>
+        <h3>Infrastructure Security Analysis</h3>
         
-        <p class="project-desc">
+        <p>
             Conducted a comprehensive vulnerability assessment and gray-box penetration test on the Linux-based server infrastructure for Chebucto Community Net (CCN). Performed rigorous Attack Surface Analysis by executing deep-packet inspection and service fingerprinting to identify critical security flaws, specifically targeting misconfigured SSH protocols and non-essential open ports.
         </p>
         <div class="highlights">
             <ul>
+                <li>Utilized industry-standard tools including Nmap and Metasploit.</li>
                 <li>Implemented RSA key-based authentication & Fail2Ban integration.</li>
-                <li>Ensured 99.9% service availability for high-risk users.</li>
-                <li>Mitigated Man-in-the-Middle (MitM) attack risks via system hardening.</li>
+                <li>Ensured 99.9% service availability for a high-risk user demographic.</li>
             </ul>
         </div>
     </div>
 
     <div class="project-card">
-        <a href="#" class="project-name">Jukebox: Location-Aware Ubiquitous Computing</a>
-        <div class="tags">
-            <span class="tag">Android API</span> <span class="tag">Spotify Web API</span> <span class="tag">GPS Geofencing</span> <span class="tag">Mixlr</span>
-        </div>
-        <p class="project-desc">
-            Developed a context-aware Android application that automates real-time Spotify playlist management through GPS geofencing. The system triggers asynchronous updates to the Spotify Web API, dynamically adding/removing tracks based on precise coordinates.
+        <span class="project-tag">Full Stack / Mobile</span>
+        <h3>Jukebox: Ubiquitous Computing System</h3>
+        <p>
+            Developed a context-aware Android application that automates real-time Spotify playlist management through GPS geofencing. The system utilizes the Android Location API to trigger asynchronous updates to the Spotify Web API based on the user's precise coordinates.
         </p>
         <div class="highlights">
             <ul>
-                <li>Validated ubiquitous systems in high-mobility urban environments.</li>
+                <li>Integrated Mixlr for low-latency audio broadcasting.</li>
                 <li>Synchronized localized audio across multiple concurrent devices.</li>
+                <li>Validated practical ubiquitous systems in urban environments.</li>
             </ul>
         </div>
     </div>
 
     <div class="project-card">
-        <a href="#" class="project-name">Cloud-Native Sports Image Classification System</a>
-        <div class="tags">
-            <span class="tag">GCP</span> <span class="tag">CNN</span> <span class="tag">TensorFlow</span> <span class="tag">Serverless</span>
-        </div>
+        <span class="project-tag">Cloud & AI</span>
+        <h3>Cloud-Native Sports Image Classification</h3>
         
 
 [Image of a Convolutional Neural Network architecture]
 
-        <p class="project-desc">
-            Engineered and deployed a Convolutional Neural Network (CNN) on Google Cloud Platform (GCP) to automate high-speed sports media tagging. Architected as an interactive web application, leveraging GCP’s AI Platform to minimize inference latency.
+        <p>
+            Engineered and deployed a Convolutional Neural Network (CNN) on Google Cloud Platform (GCP) to automate high-speed sports media tagging. Transitioned a static research environment into a scalable production tool leveraging serverless infrastructure to ensure global accessibility.
         </p>
         <div class="highlights">
             <ul>
-                <li>Optimized resource allocation for real-time image analysis.</li>
-                <li>Transitioned static research into a scalable production tool.</li>
+                <li>Leveraged GCP’s AI Platform for minimized inference latency.</li>
+                <li>Optimized resource allocation for real-time data-driven analysis.</li>
+                <li>Designed for 100% cloud-native scalability.</li>
             </ul>
         </div>
     </div>
 
-    <footer style="text-align: center; margin-top: 40px; color: #8b949e; font-size: 0.8rem;">
-        <p>Built with GitHub-Dark aesthetic &bull; 2026</p>
+    <footer>
+        <p>&copy; 2026 Akshay Saklani &bull; Full Stack Developer Portfolio</p>
     </footer>
 </div>
 
