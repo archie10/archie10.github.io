@@ -1,14 +1,52 @@
-HTML
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>YourName | GitHub Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to my website!</h1>
-    <p>This is where I'll showcase my projects and share my thoughts.</p>
+    <div class="container">
+        <aside class="profile">
+            <div class="avatar"></div>
+            <h1>Your Name</h1>
+            <p class="username">username</p>
+            <p class="bio">Full-stack Developer & Tech Enthusiast. Building things with code.</p>
+            <button class="follow-btn">Follow</button>
+        </aside>
+
+        <main class="content">
+            <nav class="tabs">
+                <a href="#" class="active">Overview</a>
+                <a href="#">Repositories</a>
+                <a href="#">Projects</a>
+            </nav>
+
+            <section class="repo-grid">
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <a href="#" class="repo-title">project-alpha</a>
+                        <span class="label">Public</span>
+                    </div>
+                    <p class="repo-desc">An interactive data visualization tool built with D3.js.</p>
+                    <div class="repo-footer">
+                        <span class="lang-color" style="background: #f1e05a;"></span> JavaScript
+                    </div>
+                </div>
+
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <a href="#" class="repo-title">machine-learning-basics</a>
+                        <span class="label">Public</span>
+                    </div>
+                    <p class="repo-desc">Regularization techniques and weight decay implementations.</p>
+                    <div class="repo-footer">
+                        <span class="lang-color" style="background: #3572A5;"></span> Python
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
