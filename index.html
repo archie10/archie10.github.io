@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshay Saklani | Full Stack Developer</title>
+    <title>Akshay Saklani | Full Stack Developer & Cloud Architect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #010409;
-            --card-bg: #0d1117;
+            --bg: #0d1117;
+            --card-bg: #161b22;
             --border: #30363d;
-            --accent: #2f81f7;
-            --text-main: #adbac7;
+            --accent: #58a6ff;
+            --text-main: #c9d1d9;
             --text-header: #f0f6fc;
-            --success: #3fb950;
+            --success: #238636;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,184 +25,186 @@
             padding: 20px;
         }
 
-        .container { max-width: 900px; margin: 40px auto; }
+        .container { max-width: 950px; margin: 40px auto; }
 
-        /* --- INTRODUCTION --- */
+        /* --- HERO SECTION --- */
         .hero {
             display: flex;
             align-items: center;
-            gap: 30px;
-            padding-bottom: 40px;
+            gap: 40px;
+            padding-bottom: 50px;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
-        .profile-pic {
-            width: 150px;
-            height: 150px;
+        .profile-img {
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 2px solid var(--border);
-            background: url('https://github.com/akshaysaklani.png') center/cover;
+            border: 3px solid var(--border);
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
         }
 
-        .hero-text h1 { color: var(--text-header); font-size: 2.2rem; margin-bottom: 5px; }
-        .hero-text h2 { color: var(--accent); font-size: 1.2rem; font-weight: 500; margin-bottom: 15px; }
-        .hero-text p { max-width: 600px; font-size: 1rem; }
+        .hero-content h1 { color: var(--text-header); font-size: 2.5rem; margin-bottom: 5px; }
+        .hero-content h2 { color: var(--accent); font-size: 1.3rem; font-weight: 500; margin-bottom: 15px; }
+        .hero-content p { max-width: 600px; color: #8b949e; }
 
-        /* --- TECH STACK --- */
+        .social-links { margin-top: 20px; display: flex; gap: 15px; }
+        .btn-social {
+            color: var(--text-header);
+            text-decoration: none;
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .btn-social:hover { background: #21262d; border-color: #8b949e; }
+
+        /* --- SKILLS GRID --- */
+        .skills-section { margin-bottom: 60px; }
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-bottom: 50px;
         }
-        .skill-category {
+        .skill-box {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 15px;
+            padding: 20px;
             border-radius: 6px;
         }
-        .skill-category h3 { color: var(--text-header); font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; }
-        .skill-list { font-size: 0.85rem; color: var(--accent); display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-box h3 { font-size: 0.8rem; text-transform: uppercase; color: #8b949e; margin-bottom: 12px; letter-spacing: 1px; }
+        .skill-list { color: var(--accent); font-weight: 500; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 8px; }
 
         /* --- PROJECTS --- */
-        .section-title { color: var(--text-header); margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
-        
         .project-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 30px;
+            border-radius: 8px;
+            padding: 35px;
             margin-bottom: 30px;
-            position: relative;
+            transition: transform 0.2s;
         }
+        .project-card:hover { transform: translateY(-3px); border-color: #8b949e; }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+        .project-name { font-size: 1.6rem; color: var(--accent); text-decoration: none; font-weight: 600; }
+        .project-type { font-size: 0.75rem; color: #8b949e; border: 1px solid var(--border); padding: 2px 10px; border-radius: 20px; }
+        .project-desc { margin: 20px 0; font-size: 1rem; color: #8b949e; text-align: justify; }
 
-        .project-card:hover { border-color: #8b949e; }
-
-        .project-tag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            background: rgba(47, 129, 247, 0.1);
-            color: var(--accent);
-            padding: 2px 8px;
+        .highlights-box {
+            background: rgba(35, 134, 54, 0.05);
+            border-left: 4px solid var(--success);
+            padding: 20px;
             border-radius: 4px;
-            border: 1px solid var(--accent);
         }
+        .highlights-box ul { list-style: none; }
+        .highlights-box li { color: #7ee787; font-size: 0.9rem; margin-bottom: 8px; }
+        .highlights-box li i { margin-right: 10px; font-size: 0.8rem; }
 
-        .project-card h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.4rem; }
-        .project-card p { margin-bottom: 20px; text-align: justify; font-size: 0.95rem; }
-
-        .highlights {
-            background: rgba(0,0,0,0.15);
-            padding: 15px;
-            border-radius: 4px;
-            border-left: 3px solid var(--success);
-        }
-        .highlights ul { list-style: none; }
-        .highlights li { font-size: 0.85rem; margin-bottom: 5px; color: #7ee787; }
-        .highlights li::before { content: "▹ "; color: var(--success); }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid var(--border); font-size: 0.8rem; }
-
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; }
+            .project-header { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <section class="hero">
-        <div class="profile-pic"></div>
-        <div class="hero-text">
+    <header class="hero">
+        <img src="https://github.com/archie10.png" alt="Akshay Saklani" class="profile-img">
+        <div class="hero-content">
             <h1>Akshay Saklani</h1>
-            <h2>Full Stack Developer</h2>
+            <h2>Full Stack Developer & Cloud Architect</h2>
             <p>
-                Specializing in building <strong>secure, cloud-native applications</strong>. I bridge the gap between robust backend infrastructure and intuitive frontend experiences, with a core focus on cybersecurity and system performance.
+                Engineering secure, distributed systems and high-performance web applications. Based in Halifax, Nova Scotia, with a focus on cloud-native infrastructure and full-stack development.
             </p>
-            <div style="margin-top: 15px;">
-                <a href="https://github.com/akshaysaklani" style="color:var(--accent); text-decoration:none;"><i class="fab fa-github"></i> GitHub</a> &nbsp; | &nbsp;
-                <a href="mailto:your-email@example.com" style="color:var(--accent); text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+            <div class="social-links">
+                <a href="https://github.com/archie10" class="btn-social"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:akshaysaklani@example.com" class="btn-social"><i class="fas fa-envelope"></i> Email</a>
+                <a href="#" class="btn-social"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="skills-section">
+        <div class="skills-grid">
+            <div class="skill-box">
+                <h3>Frontend</h3>
+                <div class="skill-list">React, JavaScript (ES6+), CSS Grid/Flexbox</div>
+            </div>
+            <div class="skill-box">
+                <h3>Backend</h3>
+                <div class="skill-list">Node.js, Python, Android SDK, SQL</div>
+            </div>
+            <div class="skill-box">
+                <h3>Cloud & Security</h3>
+                <div class="skill-list">GCP, AWS, Nmap, Metasploit, Penetration Testing</div>
             </div>
         </div>
     </section>
 
-    <div class="skills-grid">
-        <div class="skill-category">
-            <h3>Frontend</h3>
-            <div class="skill-list"><span>React</span> <span>JavaScript</span> <span>HTML5/CSS3</span></div>
-        </div>
-        <div class="skill-category">
-            <h3>Backend</h3>
-            <div class="skill-list"><span>Node.js</span> <span>Python</span> <span>Android SDK</span></div>
-        </div>
-        <div class="skill-category">
-            <h3>Cloud & DevOps</h3>
-            <div class="skill-list"><span>GCP</span> <span>AWS</span> <span>Linux Hardening</span></div>
-        </div>
-        <div class="skill-category">
-            <h3>Security</h3>
-            <div class="skill-list"><span>Pen-Testing</span> <span>Nmap</span> <span>Metasploit</span></div>
-        </div>
-    </div>
-
-    <h2 class="section-title"><i class="fas fa-layer-group"></i> Key Engineering Projects</h2>
+    <h2 style="color: var(--text-header); margin-bottom: 30px;">Featured Engineering Projects</h2>
 
     <div class="project-card">
-        <span class="project-tag">Cybersecurity</span>
-        <h3>Infrastructure Security Analysis</h3>
+        <div class="project-header">
+            <a href="https://github.com/archie10" class="project-name">Cybersecurity & Infrastructure Analysis</a>
+            <span class="project-type">Security Audit</span>
+        </div>
         
-        <p>
-            Conducted a comprehensive vulnerability assessment and gray-box penetration test on the Linux-based server infrastructure for Chebucto Community Net (CCN). Performed rigorous Attack Surface Analysis by executing deep-packet inspection and service fingerprinting to identify critical security flaws, specifically targeting misconfigured SSH protocols and non-essential open ports.
+        <p class="project-desc">
+            Conducted a comprehensive vulnerability assessment and gray-box penetration test on the Linux-based server infrastructure for <strong>Chebucto Community Net (CCN)</strong>. Performed rigorous Attack Surface Analysis by executing deep-packet inspection and service fingerprinting to identify critical security flaws, targeting misconfigured SSH protocols.
         </p>
-        <div class="highlights">
+        <div class="highlights-box">
             <ul>
-                <li>Utilized industry-standard tools including Nmap and Metasploit.</li>
-                <li>Implemented RSA key-based authentication & Fail2Ban integration.</li>
-                <li>Ensured 99.9% service availability for a high-risk user demographic.</li>
+                <li><i class="fas fa-shield-check"></i> Integrated Fail2Ban and RSA key-based authentication.</li>
+                <li><i class="fas fa-shield-check"></i> Formulated a Vulnerability Disclosure Report with hardening strategies.</li>
+                <li><i class="fas fa-shield-check"></i> Ensured 99.9% service availability for high-risk demographics.</li>
             </ul>
         </div>
     </div>
 
     <div class="project-card">
-        <span class="project-tag">Full Stack / Mobile</span>
-        <h3>Jukebox: Ubiquitous Computing System</h3>
-        <p>
-            Developed a context-aware Android application that automates real-time Spotify playlist management through GPS geofencing. The system utilizes the Android Location API to trigger asynchronous updates to the Spotify Web API based on the user's precise coordinates.
+        <div class="project-header">
+            <a href="https://github.com/archie10" class="project-name">Jukebox: Ubiquitous Computing System</a>
+            <span class="project-type">Android / IoT</span>
+        </div>
+        <p class="project-desc">
+            A context-aware Android application that automates real-time Spotify playlist management through GPS geofencing. The system utilizes the Android Location API to trigger asynchronous updates to the Spotify Web API, dynamically managing shared queues based on geographic coordinates.
         </p>
-        <div class="highlights">
+        <div class="highlights-box">
             <ul>
-                <li>Integrated Mixlr for low-latency audio broadcasting.</li>
-                <li>Synchronized localized audio across multiple concurrent devices.</li>
-                <li>Validated practical ubiquitous systems in urban environments.</li>
+                <li><i class="fas fa-check"></i> Integrated Mixlr for low-latency audio broadcasting.</li>
+                <li><i class="fas fa-check"></i> Synchronized localized audio experiences across concurrent devices.</li>
+                <li><i class="fas fa-check"></i> Validated practical applications of ubiquitous systems in urban settings.</li>
             </ul>
         </div>
     </div>
 
     <div class="project-card">
-        <span class="project-tag">Cloud & AI</span>
-        <h3>Cloud-Native Sports Image Classification</h3>
+        <div class="project-header">
+            <a href="https://github.com/archie10" class="project-name">Cloud-Native Sports Image Classifier</a>
+            <span class="project-type">Machine Learning / Cloud</span>
+        </div>
         
 
 [Image of a Convolutional Neural Network architecture]
 
-        <p>
-            Engineered and deployed a Convolutional Neural Network (CNN) on Google Cloud Platform (GCP) to automate high-speed sports media tagging. Transitioned a static research environment into a scalable production tool leveraging serverless infrastructure to ensure global accessibility.
+        <p class="project-desc">
+            Engineered and deployed a Convolutional Neural Network (CNN) on Google Cloud Platform (GCP) to automate high-speed sports media tagging. Architected as an interactive web application, transitioning a static research environment into a scalable production tool.
         </p>
-        <div class="highlights">
+        <div class="highlights-box">
             <ul>
-                <li>Leveraged GCP’s AI Platform for minimized inference latency.</li>
-                <li>Optimized resource allocation for real-time data-driven analysis.</li>
-                <li>Designed for 100% cloud-native scalability.</li>
+                <li><i class="fas fa-microchip"></i> Leveraged GCP’s AI Platform for minimized inference latency.</li>
+                <li><i class="fas fa-microchip"></i> Implemented serverless infrastructure for global accessibility.</li>
+                <li><i class="fas fa-microchip"></i> Optimized resource allocation for real-time image analysis.</li>
             </ul>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Akshay Saklani &bull; Full Stack Developer Portfolio</p>
+    <footer style="text-align: center; padding: 50px 0; color: #8b949e; font-size: 0.85rem;">
+        <p>&copy; 2026 Akshay Saklani &bull; Built for archie10.github.io</p>
     </footer>
 </div>
 
